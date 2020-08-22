@@ -10,7 +10,7 @@ function App() {
   useEffect(() => {
     fetch('https://randomuser.me/api/')
     .then(res => res.json())
-    .then(data => setPersons(data.results)); 
+    .then(data => setPersons(data.results));
   });
 
   return (
@@ -35,6 +35,7 @@ function App() {
 function Randomuser(props){
 
   const style = {
+    borderRadius: '10px',
     boxShadow: '5px 5px 10px gray',
     width: '450px',
     paddingTop: '20px',
@@ -43,7 +44,7 @@ function Randomuser(props){
   
   return (
     <div style = {style}>
-      <img src={props.profile} alt="random-pictures"/>
+      <img style = {{borderRadius: '10px'}} src={props.profile} alt="random-pictures"/>
       <h2>{props.title} {props.first} {props.last}</h2>
       <h3>{props.gender}</h3>
       <h3>{props.email}</h3>
